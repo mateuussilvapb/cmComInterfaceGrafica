@@ -40,8 +40,6 @@ public class Aplicacao {
             }
             Tabuleiro tab = new Tabuleiro(linhas, colunas, minas);
             new TabuleiroConsole(tab);
-        } else if ("2".equals(digitado)) {
-            throw new SairException();
         }
         entrada.close();
     }
