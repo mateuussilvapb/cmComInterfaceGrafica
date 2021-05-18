@@ -7,18 +7,18 @@ import java.util.function.Predicate;
 
 public class Tabuleiro implements CampoObservador {
 
-    private int linhas;
-    private int colunas;
-    private int minas;
+    private final int LINHAS;
+    private final int COLUNAS;
+    private final int MINAS;
 
     private final List<Campo> campos = new ArrayList<>();
     private final List<Consumer<ResultadoEvento>> observadores
             = new ArrayList<>();
 
     public Tabuleiro(int linhas, int colunas, int minas) {
-        this.linhas = linhas;
-        this.colunas = colunas;
-        this.minas = minas;
+        this.LINHAS = linhas;
+        this.COLUNAS = colunas;
+        this.MINAS = minas;
 
         gerarCampos();
         associarVizinhos();
@@ -55,8 +55,8 @@ public class Tabuleiro implements CampoObservador {
     }
 
     private void gerarCampos() {
-        for (int linha = 0; linha < linhas; linha++) {
-            for (int coluna = 0; coluna < colunas; coluna++) {
+        for (int linha = 0; linha < LINHAS; linha++) {
+            for (int coluna = 0; coluna < COLUNAS; coluna++) {
                 Campo campo = new Campo(linha, coluna);
                 campo.registrarObservador(this);
                 campos.add(campo);
@@ -86,7 +86,7 @@ public class Tabuleiro implements CampoObservador {
             int aleatorio = (int) (Math.random() * campos.size());
             campos.get(aleatorio).minar();
             minasArmadas = (int) campos.stream().filter(minado).count();
-        } while (minasArmadas < minas);
+        } while (minasArmadas < MINAS);
     }
 
     public boolean objetivoAlcancado() {
@@ -106,6 +106,18 @@ public class Tabuleiro implements CampoObservador {
         } else if (objetivoAlcancado()) {
             notificarObservadores(true);
         }
+    }
+
+    public int getLINHAS() {
+        return LINHAS;
+    }
+
+    public int getCOLUNAS() {
+        return COLUNAS;
+    }
+
+    public int getMINAS() {
+        return MINAS;
     }
 
 }
