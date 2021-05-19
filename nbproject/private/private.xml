@@ -5,7 +5,9 @@
         <group>
             <file>file:/C:/Users/WELLIGHTON/Documents/NetBeansProjects/campoMinado/src/br/com/mateuussilvapb/cm/modelo/Tabuleiro.java</file>
             <file>file:/C:/Users/WELLIGHTON/Documents/NetBeansProjects/campoMinado/src/br/com/mateuussilvapb/cm/visao/TelaPrincipal.java</file>
+            <file>file:/C:/Users/WELLIGHTON/Documents/NetBeansProjects/campoMinado/src/br/com/mateuussilvapb/cm/modelo/CampoObservador.java</file>
             <file>file:/C:/Users/WELLIGHTON/Documents/NetBeansProjects/campoMinado/src/br/com/mateuussilvapb/cm/visao/PainelTabuleiro.java</file>
+            <file>file:/C:/Users/WELLIGHTON/Documents/NetBeansProjects/campoMinado/src/br/com/mateuussilvapb/cm/visao/BotaoCampo.java</file>
         </group>
     </open-files>
 </project-private>

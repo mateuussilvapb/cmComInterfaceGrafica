@@ -9,10 +9,11 @@ public class PainelTabuleiro extends JPanel {
 
     public PainelTabuleiro(Tabuleiro tabuleiro) {
         setLayout(new GridLayout(tabuleiro.getLINHAS(), tabuleiro.getCOLUNAS()));
-        int total = tabuleiro.getLINHAS() * tabuleiro.getCOLUNAS();
-        for (int i = 0; i < total; i++) {
-            add(new JButton());
-        }
+
+        tabuleiro.paraCadaCampo(c -> add(new BotaoCampo(c)));
+        tabuleiro.registrarObservador(e -> {
+            //TODO mostrar resultado para o usuário
+        });
     }
 
 }
